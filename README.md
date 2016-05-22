@@ -8,12 +8,12 @@ Things you may want to cover:
 * Rails Version: 4.2.5 
 
 * App Objectives:
-	-Allow for user login
-	-Allow for user to have profile page
-	-Allow user to create multiple to-do items
-	-Allow user to see age of to-do item
-	-Allow user to mark to-do item as completed
-	-Destroy any to-do item older than 7 days
+	*Allow for user login
+	*Allow for user to have profile page
+	*Allow user to create multiple to-do items
+	*Allow user to see age of to-do item
+	*Allow user to mark to-do item as completed
+	*Destroy any to-do item older than 7 days
 
  
 	
