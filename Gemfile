@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'factory_girl_rails'
 
 group :production do
   gem 'pg'
