@@ -1,7 +1,8 @@
 FactoryGirl.define do
+  pw = RandomData.random_sentence
   factory :user do
-    email {Faker::Internet.email}
-    password "helloworld"
-    password_confirmation "password"
+    sequence(:email){|n| "user#{n}@factory.com"}
+    password pw
+    password_confirmation pw
   end
 end
