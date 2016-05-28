@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def create
-    @item = Item.new
+    @item = Item.new(item_params)
     @item.user = current_user
 
     if @item.save
@@ -9,5 +9,11 @@ class ItemsController < ApplicationController
     else
       flash.now[:alert] = "There was an error"
     end
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name)
   end
 end

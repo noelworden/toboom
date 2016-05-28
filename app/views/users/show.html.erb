@@ -1,2 +1,7 @@
 <h1><%= current_user.email%>'s ToBoom Items</h1>
-<p>All the things</p>
+<h4>All your things:</h4>
+
+<%= render @user.items %>
+<%# if current_user %>
+  <%#= render 'items/form', item: Item.create %>
+<%# end %>
