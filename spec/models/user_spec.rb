@@ -5,6 +5,8 @@ RSpec.describe User, type: :model do
   let(:fail_user1) {User.create!(email: "", password: "helloworld", password_confirmation: "helloworld")}
   let(:fail_user2) {User.create!(email: "example@example.com", password: "", password_confirmation: "")}
 
+  it {is_expected.to have_many(:items)}
+  
   describe "attributes" do
     it "should have email" do
       expect(user).to have_attributes(email: user.email)
