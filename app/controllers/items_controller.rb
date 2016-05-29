@@ -1,14 +1,8 @@
 class ItemsController < ApplicationController
   def create
-    @user = current_user
-    item = @user.item.new(item_params)
+    @user = User.find(params[:user_id])
+    @item = current_user.items.create(item_params)
 
-    if item.save
-      flash[:notice] = "Item was saved"
-      redirect_to [@user.show]
-    else
-      flash.now[:alert] = "There was an error"
-    end
   end
 
   private
