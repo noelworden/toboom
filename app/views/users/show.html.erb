@@ -2,6 +2,7 @@
 <h4>All your things:</h4>
 
 <%= render @user.items %>
+
 <% if current_user %>
-  <%= render 'items/form', item: Item.create %>
+  <%= render partial: 'items/form',  item: Item.create %>
 <% end %>
