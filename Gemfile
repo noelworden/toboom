@@ -4,6 +4,7 @@ gem 'rails', '4.2.5'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'factory_girl_rails'
+gem 'faker'
 
 group :production do
   gem 'pg'
