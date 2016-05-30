@@ -1,5 +1,5 @@
-<div class="media">
+<div class="media" id='item-<%= item.id %>'>
   <div class="media-body">
-    <p><%= item.name %></p>
+    <p><%= item.name %> <%= link_to "", user_item_path(item.user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></p>
   </div>
 </div>

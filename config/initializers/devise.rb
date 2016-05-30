@@ -14,6 +14,8 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'example@toboom.com'
 
+  ###THIS WAS NOT A STANDARD OPTION
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -61,7 +63,7 @@ Devise.setup do |config|
 
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
-  # given strategies, for example, `config.http_authenticatable = [:database]` will
+  # given strategies, for example, `config.navigational_formats = [:database]` will
   # enable it only for database authentication. The supported strategies are:
   # :database      = Support basic authentication with authentication key + password
   # config.http_authenticatable = false
@@ -233,7 +235,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
+  config.navigational_formats = ['*/*', :html, :json]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
