@@ -11,30 +11,19 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @item = Item.find(params[:id])
-
-  #   if @item.destroy
-  #     flash[:notice] = "The item -#{@item.name}- has been completed!"
-  #     # redirect_to user_path(:user_id)
-  #   else
-  #     flash.now[:alert] = "There was an error marking this as complete, try again"
-  #   end
-
-  #   respond_to do |format|
-  #     format.html
-  #     format.js
-  #   end
-  # end
-
   def destroy
     @item = Item.find(params[:id])
 
     if @item.destroy
-      respond_to do |format|
-        format.html
-        format.js
-      end
+      flash[:notice] = "The item -#{@item.name}- has been completed!"
+      # redirect_to user_path(:user_id)
+    else
+      flash.now[:alert] = "There was an error marking this as complete, try again"
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
