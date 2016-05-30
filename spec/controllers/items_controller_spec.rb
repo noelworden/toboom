@@ -17,7 +17,7 @@ let(:my_item){Item.create!(user_id: my_user.id, name: "Another test post")}
 
     describe "delete DESTROY" do
       it "deletes the item" do
-        delete :destroy, user_id: my_user.id, id: my_item.id
+        delete :destroy, format: :js, user_id: my_user.id, id: my_item.id
         count = Item.where({id: my_item.id}).size
         expect(count).to eq 0
       end
