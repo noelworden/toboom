@@ -24,6 +24,15 @@ defaul2 = User.create!(
 end
 items = Item.all
 
+###### Used for an individual seed #######
+# 30.times do
+#   Item.create!(
+#     name: Faker::Hipster.sentence(4),
+#     user_id: 6
+#     )
+# end
+# items = Item.all
+
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Item.count} itmes created"
