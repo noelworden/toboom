@@ -1,5 +1,5 @@
 <div class="media" id='item-<%= item.id %>'>
   <div class="media-body">
-    <p><%= item.name %> <%= link_to "", user_item_path(item.user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></p>
+    <p><strong><%= distance_of_time_in_words(Time.now, item.created_at + 168.hours)%><%=" left before explosion || "%></strong><%= item.name %> <%= link_to "", user_item_path(item.user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></p>
   </div>
 </div>
