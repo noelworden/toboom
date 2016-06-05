@@ -2,6 +2,8 @@
   <div class="media-body">
     <p><strong><%= distance_of_time_in_words(Time.now, item.expires_at)%><%=" left before explosion || "%></strong>
       <%= item.name %>
+      <%= link_to "Complete", user_item_path(item.user, item), method: :put, class: 'btn btn-success' %>
+      <%#= link_to "Complete", {:controller => "items_controller", :action => "update", :user_id => item.user_id, :id => item.id}, class: 'btn btn-success' %>
       <%= link_to "Delete Item", user_item_path(item.user, item), method: :delete, remote: true, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this item?' }%>
       </p>
   </div>

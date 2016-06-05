@@ -11,6 +11,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def update
+    @item = Item.find(params[:id])
+    @item.complete = 1
+    @item.save
+    redirect_to user_path(:user_id)
+  end
+
   def destroy
     @item = Item.find(params[:id])
 

@@ -9,6 +9,7 @@ class Item < ActiveRecord::Base
 
   enum complete: [:no, :yes]
 
+
   def expires_at
     (created_at + 7.days)
   end
