@@ -33,10 +33,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def completed_items
-    @completed_items = Item.where(complete: 1)
-  end
-
   private
 
   def item_params

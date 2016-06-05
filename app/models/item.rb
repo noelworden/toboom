@@ -13,8 +13,4 @@ class Item < ActiveRecord::Base
     (created_at + 7.days)
   end
 
-  # def completed_items
-  #   @completed_items = Item.where(complete: 1)
-  # end
-
 end
