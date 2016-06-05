@@ -1,7 +1,10 @@
 <h1><%= current_user.email%>'s ToBoom Items</h1>
 <h4>All your things:</h4>
 
-<%= render @user.items %>
+<%# @completed_items = Item.where(complete: 1) %>
+<%= render @user.items.completed_at %>
+<%#= render @user.completed_items %>
+
 
 <% if current_user %>
   <%= render partial: 'items/form',  locals: {user: @user} %>

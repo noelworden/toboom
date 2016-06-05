@@ -23,7 +23,6 @@ class ItemsController < ApplicationController
 
     if @item.destroy
       flash[:notice] = "The item -#{@item.name}- has been completed!"
-      # redirect_to user_path(:user_id)
     else
       flash.now[:alert] = "There was an error marking this as complete, try again"
     end
@@ -32,6 +31,10 @@ class ItemsController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  def completed_items
+    @completed_items = Item.where(complete: 1)
   end
 
   private
