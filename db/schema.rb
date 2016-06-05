@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160605002900) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "complete"
+    t.boolean  "complete"
   end
 
   add_index "items", ["user_id"], name: "index_items_on_user_id"
