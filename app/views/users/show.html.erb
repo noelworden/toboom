@@ -1,9 +1,10 @@
-<h1><%= current_user.email%>'s ToBoom Items</h1>
-
+<div class="header">
+  <h1><%= current_user.email%>'s ToBoom Items</h1>
+</div>
+<div class="items">
 <h4>All your things to do:</h4>
 <%= render @user.items.incomplete_items %>
 
-<div class="complete-items">
   <%# @incomplete_items.each do |item| %>
     <%#= render partial: 'item', locals: {item: item} %>
     <%#= link_to "Complete", user_item_path(item.user, item), method: :put, class: 'btn btn-success' %>
@@ -11,14 +12,17 @@
   <%# end %>
 </div>
 
-<% if current_user %>
-  <%= render partial: 'items/form',  locals: {user: @user} %>
-<% end %>
+<div class="item-form">
+  <% if current_user %>
+    <%= render partial: 'items/form',  locals: {user: @user} %>
+  <% end %>
+</div>
+
+<div class="items">
 
 <h4> All your completed things: </h4>
 <%= render @user.items.complete_items %>
 
-<div class="complete-items">
   <%# @complete_items.each do |item| %>
   <%#= render partial: 'item', locals: {item: item} %>
   <%# end %>

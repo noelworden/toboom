@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.complete = 1
+    @item.complete = "true"
     @item.save
     redirect_to user_path(:user_id)
   end
