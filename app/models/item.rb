@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  before_save {self.complete ||= :false}
+  # before_save {self.complete ||= false}
 
   belongs_to :user
 
@@ -7,10 +7,5 @@ class Item < ActiveRecord::Base
 
   scope :incomplete_items, -> {Item.where(complete: false)}
   scope :complete_items, -> {Item.where(complete: true)}
-
-
-  def expires_at
-    (created_at + 7.days)
-  end
 
 end

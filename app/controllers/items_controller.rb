@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @item = current_user.items.create(item_params)
+    @item.expires_at = Time.now + 7.days
 
     if @item.save
       flash[:notice] = "Items was saved."
@@ -13,9 +14,9 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.complete = "true"
-    @item.save
-    redirect_to user_path(:user_id)
+    @item.complete = !@item.complete
+    @item.save!
+    redirect_to current_user
   end
 
   def destroy

@@ -19,7 +19,8 @@ defaul2 = User.create!(
 80.times do
   Item.create!(
     name: Faker::Hipster.sentence(4),
-    user_id: rand(1..7)
+    user_id: rand(1..7),
+    expires_at: Time.now + 7.days
     )
 end
 items = Item.all
