@@ -3,7 +3,8 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :name
       t.references :user, index: true, foreign_key: true
-
+      t.boolean :complete, default: false
+      t.datetime :expires_at
       t.timestamps null: false
     end
   end

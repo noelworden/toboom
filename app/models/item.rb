@@ -1,13 +1,11 @@
 class Item < ActiveRecord::Base
-  require 'action_view'
-  include ActionView::Helpers::DateHelper
+  # before_save {self.complete ||= false}
 
   belongs_to :user
 
   default_scope { order('created_at ASC')}
 
-  def expires_at
-    (created_at + 7.days)
-  end
+  scope :incomplete_items, -> {Item.where(complete: false)}
+  scope :complete_items, -> {Item.where(complete: true)}
 
 end

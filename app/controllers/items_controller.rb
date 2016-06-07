@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @item = current_user.items.create(item_params)
+    @item.expires_at = Time.now + 7.days
 
     if @item.save
       flash[:notice] = "Items was saved."
@@ -11,12 +12,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def update
+    @item = Item.find(params[:id])
+    @item.complete = !@item.complete
+    @item.save!
+    redirect_to current_user
+  end
+
   def destroy
     @item = Item.find(params[:id])
 
     if @item.destroy
       flash[:notice] = "The item -#{@item.name}- has been completed!"
-      # redirect_to user_path(:user_id)
     else
       flash.now[:alert] = "There was an error marking this as complete, try again"
     end
