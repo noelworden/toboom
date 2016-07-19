@@ -16,8 +16,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.user-info{
+  margin-top: 9px;
+}
+
+.nav {
+  margin-top: 5px;
+}
+
+.jumbotron{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.jumbo-text{
+  margin-left: 20px;
+}
 
 .welcome{
   text-align: center;
   padding-bottom: 20px;
+}
+
+.row{
+  margin-left: 30px;
 }
