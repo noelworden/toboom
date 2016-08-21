@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     @item.expires_at = Time.now + 7.days
 
     if @item.save
-      flash[:notice] = "Items was saved."
+      flash[:notice] = "Item was saved."
       redirect_to [@user]
     else
       flash[:alert] = "Try that again."
@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     if @item.destroy
-      flash[:notice] = "The item -#{@item.name}- has been completed!"
+      flash[:notice] = "The item -#{@item.name}- has been deleted!"
     else
       flash.now[:alert] = "There was an error marking this as complete, try again"
     end
