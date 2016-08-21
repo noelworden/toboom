@@ -1,9 +1,9 @@
 <div class="media" id='item-<%= item.id %>'>
   <div class="media-body">
-    <p><strong><%= distance_of_time_in_words(Time.now, item.expires_at)%><%=" left before explosion || "%></strong>
+    <p><strong><%= distance_of_time_in_words(Time.now, item.expires_at)%><%=" left before implosion || "%></strong>
       <%= item.name %>
       <% if item.complete %>
-        <%= link_to "mark incomplete", user_item_path(item.user, item), method: :put, class: 'btn btn-success' %>
+        <%= link_to "Mark Incomplete", user_item_path(item.user, item), method: :put, class: 'btn btn-success' %>
       <% else %>
         <%= link_to "Complete", user_item_path(item.user, item), method: :put, class: 'btn btn-success' %>
       <% end %>

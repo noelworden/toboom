@@ -6,14 +6,9 @@
 end
 users = User.all
 
-default1 = User.create!(
-  email: "x@toboom.com",
-  password: "helloworld"
-  )
-
-defaul2 = User.create!(
-  email: "x@gmail.com",
-  password: "helloworld"
+me = User.create!(
+  email: "noelworden@gmail.com",
+  password: "password"
   )
 
 80.times do

@@ -1,23 +1,19 @@
 <br>
 <br>
-</div>
-<div class="items">
-<h4>All your things to do:</h4>
-<%= render @user.items.incomplete_items %>
-</div>
+<div class="container">
+  <div class="items">
+    <h4>All your things to do:</h4>
+    <%= render @user.items.incomplete_items %>
+  </div>
 
-<div class="item-form">
-  <% if current_user %>
-    <%= render partial: 'items/form',  locals: {user: @user} %>
-  <% end %>
-</div>
+  <div class="item-form">
+    <% if current_user %>
+      <%= render partial: 'items/form',  locals: {user: @user} %>
+    <% end %>
+  </div>
 
-<div class="items">
-
-<h4> All your completed things: </h4>
-<%= render @user.items.complete_items %>
-
-  <%# @complete_items.each do |item| %>
-  <%#= render partial: 'item', locals: {item: item} %>
-  <%# end %>
+  <div class="items">
+    <h4> All your completed things: </h4>
+    <%= render @user.items.complete_items %>
+  </div>
 </div>
