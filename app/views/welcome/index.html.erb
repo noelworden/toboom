@@ -1,2 +1,11 @@
-<h1>This is ToBoom</h1>
-<p id="index-title">This is the home page for ToBoom</p>
+<br>
+<br>
+<div class="jumbotron">
+  <h1>Toboom</h1>
+  <h4>This is not an ordinary to-do app. Any item left for more than 7 days will implode.</h4>
+  <br>
+  <p> You must
+    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> or
+    <%= link_to "Sign in", new_user_session_path, :class => 'navbar-link' %> to use this app
+  </p>
+</div>
