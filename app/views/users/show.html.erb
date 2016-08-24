@@ -2,7 +2,7 @@
 <br>
 <div class="container">
   <div class="items">
-    <h4>You have <%= pluralize(@user.items.incomplete_items.count, 'thing') %> to do:</h4>
+    <h4>You have <span id='itemCount'><%= pluralize(@user.items.incomplete_items.count, 'thing') %></span> to do:</h4>
     <%= render @user.items.incomplete_items %>
   </div>
 
