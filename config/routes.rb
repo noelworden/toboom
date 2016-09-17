@@ -10,7 +10,5 @@ Rails.application.routes.draw do
     root to: 'users#show', as: :authenticated_root
   end
 
-  get 'about' => 'welcome#about'
-
   root 'welcome#index'
 end
