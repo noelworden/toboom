@@ -1,6 +1,7 @@
 <% if @item.destroyed? %>
   $('#item-<%= @item.id %>').hide();
   $('#itemCount').html("<%= pluralize(@user.items.incomplete_items.count, 'thing') %>");
+  $('.flash').prepend("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button>The item -<%= @item.name %>- has been deleted!</div>");
 <% else %>
-  $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
-  <% end %>
+  $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button>There was an error marking this as complete, try again</div>");
+<% end %>
